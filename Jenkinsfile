@@ -14,7 +14,7 @@ node {
     stage('Deploy to staging'){
         def DOCBUILD='docker run -d --publish 8080:8080 -d anandsundar/myimage:v1.0'
         sshagent(['JenkinsCred']) {
-            sh "ssh -o StrictHostKeyChecking=no  cloud_user@3.17.66.64 ${DOCBUILD}"
+            sh "ssh -o StrictHostKeyChecking=no  cloud_user@3.17.161.53 ${DOCBUILD}"
         }
     }
 }
