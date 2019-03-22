@@ -1,3 +1,3 @@
 FROM ubuntu:xenial
 
-COPY . /app
+COPY . /app 
