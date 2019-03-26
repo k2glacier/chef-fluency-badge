@@ -11,10 +11,4 @@ node {
         }       
         sh "docker push  anandsundar/myimage:v1.0"
     }
-    stage('Deploy to staging'){
-        def DOCBUILD='docker run -d --publish 8080:8080 -d anandsundar/myimage:v1.0'
-        sshagent(['LAID']) {
-            sh "ssh -o StrictHostKeyChecking=no  -l cloud_user 3.17.13.173 ${DOCBUILD}"
-        }
-    }
 }
