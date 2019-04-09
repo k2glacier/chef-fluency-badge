@@ -16,4 +16,5 @@ node {
         sshagent(['JenkinsCred']) {
             sh "ssh -o StrictHostKeyChecking=no  -l cloud_user 18.222.131.208 ${DOCBUILD}"
         }
+	}
 }
