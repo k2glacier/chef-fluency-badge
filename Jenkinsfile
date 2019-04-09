@@ -13,7 +13,7 @@ node {
     }
     stage('Deploy to staging'){
         def DOCBUILD='docker run -d --publish 8080:8080 -d anandsundar/myimage:v1.0'
-        sshagent (credentials: ['JC']) {
+        sshagent (credentials: ['JCC']) {
             sh "ssh -v -o StrictHostKeyChecking=no  -l cloud_user 18.222.131.208 ${DOCBUILD}"
         }
 	}
